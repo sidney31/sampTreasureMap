@@ -5,21 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <link href="{% static 'css/index.css' %}" rel="stylesheet">
-    <script src="{% static 'js/panzoom.js' %}" query='.scene'></script>
+    <script type="module" src="{% static 'js/index.js' %}"></script>
+    <script src="{% static '/js/node_modules/@panzoom/panzoom/dist/panzoom.js' %}"></script>
     <title>Title</title>
 </head>
 <body>
-    <div class='scene'>
-        <img class="map" src="{% static 'img/map.webp' %}" alt="">
+<div id="container">
+    <div id="sidebar">
     </div>
+
+    <div id="content">
+        <div id="map-container" style="background-image: url({% static '/img/map.webp' %})"></div>
+    </div>
+</div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
