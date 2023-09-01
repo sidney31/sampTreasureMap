@@ -3,8 +3,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
+    font-family: "Gill Sans", sans-serif;
     padding: 0;
     margin: 0;
     cursor: url("../img/cursor.cur"), auto;
@@ -17,25 +17,61 @@ body {
     height: 100vh;
 }
 
-#sidebar {
-    background: #232323;
-    float: left;
-    width: 15%;
-    height: 100%;
-}
-
 #content {
     background: #DCDCDC;
     float: right;
     width: 85%;
     height: 100%;
+    font-size: 32px;
 }
 
-#map-container
-{
+#map-container {
     width: 12000px;
     height: 10000px;
-    background-color: rgb(114,138,175);
+    background-color: rgb(114, 138, 175);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#sidebar {
+    background: #232323;
+    float: left;
+    width: 15%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+}
+
+#sidebar a {
+    width: 70%;
+    align-self:  center;
+    display: flex;
+    text-decoration: none;
+    color: #dedede;
+    pointer-events: none;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sidebar a span {
+    float: left;
+}
+
+#sidebar a div {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.simple-point {
+    background-color: orangered;
+}
+
+.low-point {
+    background-color: green;
+}
+
+.high-point {
+    background-color: blue;
 }
