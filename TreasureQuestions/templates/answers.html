@@ -2,10 +2,6 @@
 
 {% load static %}
 
-{% block script %}
-	<script src="{% static 'js/treasureAnswers.js.js' %}"></script>
-{% endblock %}
-
 {% block content %}
     <div id="questions_and_answers">
         {% for question in questions %}

@@ -73,7 +73,7 @@ main {
     background-position: center;
 }
 
-.hint-mark {
+.hint_mark {
     width: 2vw;
     height: 2vw;
     background-size: contain;
@@ -88,7 +88,7 @@ hint {
     bottom: 0;
 }
 
-.hint-window {
+.hint_window {
     display: grid;
     background: rgba(35, 35, 35, 0.35);
     width: max-content;
@@ -100,7 +100,7 @@ hint {
     transition-duration: 0.3s;
 }
 
-.hint-window.active {
+.hint_window.active {
     opacity: 1;
 }
 

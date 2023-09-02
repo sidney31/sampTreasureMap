@@ -12,13 +12,19 @@ window.addEventListener('load', function () {
     parent.addEventListener('wheel', panzoom.zoomWithWheel)
 });
 
-const hint_mark = document.querySelector(".hint-mark")
-const hint_window = document.querySelector(".hint-window")
+try {
+    const hintMark = document.querySelector(".hint_mark")
+    const hintWindow = document.querySelector(".hint_window")
 
-hint_mark.addEventListener("mouseover", (event) => {
-    hint_window.classList.toggle('active');
-});
+    hintMark.addEventListener("mouseover", (event) => {
+        hintWindow.classList.toggle('active');
+    });
 
-hint_mark.addEventListener("mouseout", (event) => {
-    hint_window.classList.toggle('active');
-});
+    hintMark.addEventListener("mouseout", (event) => {
+        hintWindow.classList.toggle('active');
+    });
+
+} catch (e) {
+    console.log(e)
+}
+
