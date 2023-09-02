@@ -10,25 +10,36 @@
     <title>Title</title>
 </head>
 <body>
-<div id="container">
-    <div id="sidebar">
-        <a href="#">
-            <span>Точка на земле</span>
-            <div class="simple-point"></div>
-        </a>
-        <a href="#">
-            <span>Точка внизу</span>
-            <div class="low-point"></div>
-        </a>
-        <a href="#">
-            <span>Точка вверху</span>
-            <div class="high-point"></div>
-        </a>
-    </div>
+    <div id="container">
+        <header>
+            <a href="#" class="logo">
+                Tresure Map
+            </a>
 
-    <div id="content">
-        <div id="map-container" style="background-image: url({% static '/img/map.webp' %})"></div>
+            <div class="header-right">
+                <a href="#">Карта кладов</a>
+                <a href="#">Ответы на клады</a>
+            </div>
+        </header>
+
+        <main>
+            <div id="map-container" style="background-image: url({% static '/img/map.webp' %})"></div>
+        </main>
+
+        <hint>
+            <a href="#">
+                <span>Точка на земле</span>
+                <div class="simple-point"></div>
+            </a>
+            <a href="#">
+                <span>Точка внизу</span>
+                <div class="low-point"></div>
+            </a>
+            <a href="#">
+                <span>Точка вверху</span>
+                <div class="high-point"></div>
+            </a>
+        </hint>
     </div>
-</div>
 </body>
 </html>
