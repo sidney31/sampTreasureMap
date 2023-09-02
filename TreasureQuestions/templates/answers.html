@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block script %}
+	<script src="{% static 'js/treasureAnswers.js.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div id="questions_and_answers">
+        {% for question in questions %}
+            <div class="question_block">
+                <div class="question">{{ question.question }}</div>
+                <div class="answer">{{ question.answer }}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="alert">
+        Ответ был успешно скопирован!
+    </div>
+{% endblock %}
+

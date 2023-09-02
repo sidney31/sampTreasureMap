@@ -12,6 +12,7 @@ body {
 }
 
 #container {
+    background-color: #2a2a2a;
     margin: auto auto;
     text-align: center;
     width: 100vw;
@@ -36,12 +37,12 @@ header a {
     padding: 10px 20px;
 }
 
-header a:hover{
+header a:hover {
     transition-duration: 0.2s;
     color: rgba(255, 255, 255, 0.7);
 }
 
-.header-right{
+.header-right {
     float: right;
     display: flex;
     align-items: center;
@@ -72,17 +73,35 @@ main {
     background-position: center;
 }
 
+.hint-mark {
+    width: 2vw;
+    height: 2vw;
+    background-size: contain;
+    margin: 100px 25px 25px 25px;
+    float: right;
+
+}
+
 hint {
     position: fixed;
     right: 0;
     bottom: 0;
+}
+
+.hint-window {
+    display: grid;
     background: rgba(35, 35, 35, 0.35);
     width: max-content;
     height: 100px;
-    display: grid;
     grid-template-columns: repeat(3, 100px);
     border-radius: 5px;
     margin: 15px;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+.hint-window.active {
+    opacity: 1;
 }
 
 hint a {
@@ -117,4 +136,40 @@ hint a div {
 
 .high-point {
     background-color: blue;
+}
+
+#questions_and_answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question_block {
+    border: white 3px solid;
+    color: white;
+    text-align: start;
+    margin: 2em;
+    width: 1000px;
+    font-size: 26px;
+}
+
+.answer {
+    color: #9ACD32;
+}
+
+.answer:after {
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+    content: ' \f328';
+    color: rgb(171, 171, 171);
+}
+
+#alert {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }

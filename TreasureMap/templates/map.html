@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block script %}
+	<script src="{% static 'js/treasureMap.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div id="map-container" style="background-image: url({% static '/img/map.webp' %})"></div>
+    </main>
+
+    <hint>
+        <div class="hint-mark" style="background-image: url({% static '/img/hint-icon.png' %})"></div>
+        <div class="hint-window">
+            <a href="#">
+                <span>Точка на земле</span>
+                <div class="simple-point"></div>
+            </a>
+            <a href="#">
+                <span>Точка внизу</span>
+                <div class="low-point"></div>
+            </a>
+            <a href="#">
+                <span>Точка вверху</span>
+                <div class="high-point"></div>
+            </a>
+        </div>
+    </hint>
+{% endblock %}
+
