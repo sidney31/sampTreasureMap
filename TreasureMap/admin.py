@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from TreasureMap.models import MapPoint
+
+admin.site.register(MapPoint)
