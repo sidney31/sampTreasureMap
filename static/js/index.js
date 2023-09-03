@@ -27,16 +27,35 @@ try {
     console.log(e)
 }
 
-async function copyAnswerToClipboard(text) {
-    await navigator.clipboard.writeText(text)
+
+function copyToClipboard(text){
+    if (window.isSecureContext && navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+    } else {
+        unsecuredCopyToClipboard(text);
+    }
+}
+
+function unsecuredCopyToClipboard(text) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        document.execCommand('copy')
+    } catch (err) {
+        console.error('Unable to copy to clipboard', err)
+    }
+    document.body.removeChild(textArea)
 }
 
 try {
     let notification = document.querySelector("#notification")
     const answers = document.querySelectorAll('.answer')
     for (let i in answers) {
-        answers[i].addEventListener('click', async _ => {
-            await navigator.clipboard.writeText(answers[i].innerHTML)
+        answers[i].addEventListener('click', _ => {
+            copyToClipboard(answers[i].innerHTML)
             ShowNotification(notification)
         }, false)
     }
