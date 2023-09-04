@@ -3,7 +3,7 @@ try {
         const elem = document.querySelector('#map-container')
         const parent = elem.parentElement
         const panzoom = Panzoom(elem, {
-            maxScale: 4,
+            maxScale: 5,
             minScale: 1,
             cursor: "url(\"../img/cursor.cur\")",
             contain: "outside",
@@ -41,4 +41,14 @@ try {
 function ShowNotification(notif) {
     notif.classList.toggle('active');
     setTimeout(() => notif.classList.toggle('active'), 1000);
+}
+
+let path = window.location.href.split('/');
+let page = path[path.length-2]
+try {
+    if (page === 'questions') {
+        document.body.style.overflow = 'visible'
+    }
+} catch (e) {
+    console.log(e)
 }
