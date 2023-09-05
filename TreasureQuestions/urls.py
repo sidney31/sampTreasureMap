@@ -1,5 +1,6 @@
 from django.urls import path
 from TreasureQuestions.views import questions_page
+from TreasureQuestions import models
 
 app_name = 'questions'
 
