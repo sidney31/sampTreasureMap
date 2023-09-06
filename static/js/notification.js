@@ -1,16 +1,17 @@
 window.addEventListener("load", function () {
-    let notification = document.querySelector("#notification")
-    let answers = document.getElementsByClassName("answer")
+    updateAnswers();
+})
 
-    console.log(answers[0].toString())
-
+function updateAnswers() {
+    let notification = document.querySelector("#notification");
+    let answers = document.getElementsByClassName("answer");
     for (let i = 0; i < answers.length; ++i) {
         answers[i].addEventListener("click", function () {
-            navigator.clipboard.writeText(answers[i].innerHTML)
-            ShowNotification(notification)
-        }, false)
+            navigator.clipboard.writeText(answers[i].innerHTML);
+            ShowNotification(notification);
+        }, false);
     }
-})
+}
 
 function ShowNotification(notif) {
     notif.classList.toggle('active');
