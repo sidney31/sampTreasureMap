@@ -2,7 +2,14 @@
 
 {% load static %}
 
+{% block scripts %}
+	<script type='text/javascript' src="{% static 'js/notification.js' %}"></script>
+	<script type='text/javascript' src="{% static 'js/live-search.js' %}"></script>
+{% endblock %}
+
+
 {% block content %}
+    <input type="text" class="search-box" placeholder="Поиск вопроса">
     <div id="questions_and_answers">
         {% for question in questions %}
             <div class="question_block">
