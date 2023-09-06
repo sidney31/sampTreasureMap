@@ -5,23 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <link href="{% static 'css/index.css' %}" rel="stylesheet">
-    <script type="module" src="{% static 'js/index.js' %}"></script>
+    {% block scripts %}{% endblock %}
     <script src="{% static '/js/node_modules/@panzoom/panzoom/dist/panzoom.js' %}"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
           integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <title>{{ title }}</title>
 </head>
 <body>
+<header>
+    <a href="{% url 'TreasureMap:index' %}" class="logo">
+        Treasure Map
+    </a>
+    <div class="header-right">
+        <a href="{% url 'TreasureMap:index' %}">Карта кладов</a>
+        <a href="{% url 'TreasureQuestions:questions_page' %}">Ответы на клады</a>
+    </div>
+</header>
 <div id="container">
-    <header>
-        <a href="{% url 'TreasureMap:index' %}" class="logo">
-            Treasure Map
-        </a>
-        <div class="header-right">
-            <a href="{% url 'TreasureMap:index' %}">Карта кладов</a>
-            <a href="{% url 'TreasureQuestions:questions_page' %}">Ответы на клады</a>
-        </div>
-    </header>
     {% block content %} {% endblock %}
 </div>
 </body>
