@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block scripts %}
+	<script type="module" src="{% static 'js/pan&zoom.js' %}"></script>
+{% endblock %}
+
 {% block content %}
     <main>
         <div id="map-container" style="background-image: url({% static '/img/map.webp' %})"></div>
