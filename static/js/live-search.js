@@ -7,7 +7,7 @@ window.onload = () => {
 
     updateList();
 
-    search_box.onkeydown = function () {
+    search_box.onkeyup = function () {
         updateList();
         let search_text = this.value;
         questions_and_answers.innerHTML = ''
